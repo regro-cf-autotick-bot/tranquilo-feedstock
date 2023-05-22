@@ -1,5 +1,5 @@
 {% set name = "tranquilo" %}
-{% set version = "0.0.3" %}
+{% set version = "0.0.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tranquilo-{{ version }}.tar.gz
-  sha256: 63a49957bc09e38bd01846e23d78d9ca3b6cc5d41b2527d54b267473b8fc06c6
+  sha256: fa6e6a582f13e6a426f1dbb62fd849cb51448f729199b29cbc2053754591dc73
 
 build:
   noarch: python
