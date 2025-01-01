@@ -6,23 +6,23 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/tranquilo-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/tranquilo-{{ version }}.tar.gz
   sha256: 33824f3907c1582cb786a1a6b56d9135fed8ff82359158033099559413ab8741
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools >=45
     - wheel
     - setuptools-scm >=6.0
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - estimagic >=0.4.2
     - numba
     - numpy >=1.17.0
@@ -37,6 +37,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/OpenSourceEconomics/tranquilo
